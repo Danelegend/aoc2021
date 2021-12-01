@@ -1,5 +1,5 @@
-import day1_puzzle1_logic
+import day1PuzzleLogic
 
 fun main() {
-    day1_puzzle1_logic()
+    day1PuzzleLogic()
 }
