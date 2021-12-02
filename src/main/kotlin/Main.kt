@@ -1,5 +1,5 @@
-import day1PuzzleLogic
+import day2PuzzleLogic
 
 fun main() {
-    day1PuzzleLogic()
+    day2PuzzleLogic()
 }
