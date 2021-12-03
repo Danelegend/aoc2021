@@ -1,5 +1,4 @@
-import java.io.File
-import java.io.InputStream
+import generateIntData
 
 fun sonarSweepP1(data : IntArray): Int {
     if (data.isEmpty() || data.size == 1) {
@@ -38,16 +37,7 @@ fun sonarSweepP2(data : IntArray): Int {
     return ret
 }
 
-fun generateData(file_name : String): IntArray {
-    val inputStream: InputStream = File(file_name).inputStream()
-    val lineList = mutableListOf<Int>()
-
-    inputStream.bufferedReader().useLines { lines -> lines.forEach { lineList.add(it.replace('\n', '\u0000').toInt()) } }
-
-    return lineList.toTypedArray().toIntArray()
-}
-
 fun day1PuzzleLogic() {
-    println(sonarSweepP1(generateData("src\\main\\data\\d1_p1_data.txt")))
-    println(sonarSweepP2(generateData("src\\main\\data\\d1_p1_data.txt")))
+    println(sonarSweepP1(generateIntData("src\\main\\data\\d1_p1_data.txt")))
+    println(sonarSweepP2(generateIntData("src\\main\\data\\d1_p1_data.txt")))
 }

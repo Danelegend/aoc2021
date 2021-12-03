@@ -1,14 +1,4 @@
-import java.io.File
-import java.io.InputStream
-
-fun generate_data(file_name : String): Array<String> {
-    val inputStream: InputStream = File(file_name).inputStream()
-    val lineList = mutableListOf<String>()
-
-    inputStream.bufferedReader().useLines { lines -> lines.forEach { lineList.add(it.replace('\n', '\u0000')) } }
-
-    return lineList.toTypedArray()
-}
+import generateStringData
 
 fun getHorizontalByVerticalNoAim(data: Array<String>) : Int {
     var vertPos = 0
@@ -48,6 +38,6 @@ fun getHorizontalByVerticalWithAim(data: Array<String>) : Int {
 
 
 fun day2PuzzleLogic(){
-    println(getHorizontalByVerticalNoAim(generate_data("src\\main\\data\\d2_p1_data.txt")))
-    println(getHorizontalByVerticalWithAim(generate_data("src\\main\\data\\d2_p1_data.txt")))
+    println(getHorizontalByVerticalNoAim(generateStringData("src\\main\\data\\d2_p1_data.txt")))
+    println(getHorizontalByVerticalWithAim(generateStringData("src\\main\\data\\d2_p1_data.txt")))
 }
